@@ -75,7 +75,7 @@ If `A(x)` is Radon transform called by `'Projection'`,
         
 then `AT(y)` is Inverse Radon transform without Filtration called by `'Backprojection'`, 
 
-        AT(y) = iradon(y, THETA, 'none', N).
+        AT(y) = iradon(y, THETA, 'none', N)/(pi/(2*length(THETA))).
         
         where, 'none' is filtration option and N is image size. 
         
