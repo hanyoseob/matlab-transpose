@@ -27,7 +27,7 @@ M           = N;
 K           = N;
 
 A   = @(x) fftshift(fft2(ifftshift(x)))./numel(x);
-AT  = @(y) ifftshift(ifft2(fftshift(y)));
+AT  = @(y) fftshift(ifft2(ifftshift(y)));
 
 switch dataType
     case 'REAL'
