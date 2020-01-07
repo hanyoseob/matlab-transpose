@@ -77,7 +77,7 @@ disp([' < A * X, Y > - < X, A^T * Y >	 = ' num2str(lhs - rhs, '%.6f') ]);
 disp(' ');
 
 if (abs(lhs - rhs) < th)
-    disp(['Therefore, A^T is the Transpose of A.']);
+    disp(['Since < A * X, Y > = < X, A^T * Y >, A^T is the Transpose of A.']);
 else
-    disp(['Therefore, A^T is not the Transpose of A.']);
+    disp(['Since < A * X, Y > != < X, A^T * Y >, A^T is not the Transpose of A.']);
 end
