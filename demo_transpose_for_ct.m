@@ -64,7 +64,7 @@ rhs	= X(:)'*ATY(:);
 % < A * X, Y > = < X, A^T * Y >
 % < A * X, Y > - < X, A^T * Y > = 0
 
-th  = max(abs(lhs), abs(rhs)) .* 1e-4;
+th  = 1e-4;
 
 disp(['dim( A )       = ' dataType ' ^ ' num2str([DCT, VIEW, M, K], '( (%d,	%d) x (%d, %d) )')]);
 disp(['dim( X )       = ' dataType ' ^ ' num2str([M, K], '( %d,	%d )')]);
@@ -76,7 +76,7 @@ disp([' < X,        A^T * Y >           = ' num2str(rhs, '%.6f') ]);
 disp([' < A * X, Y > - < X, A^T * Y >	 = ' num2str(lhs - rhs, '%.6f') ]);
 disp(' ');
 
-if (abs(lhs - rhs) < th)
+if (abs(lhs - rhs) < max(abs(lhs), abs(rhs))*th)
     disp(['Since < A * X, Y > = < X, A^T * Y >, A^T is the Transpose of A.']);
 else
     disp(['Since < A * X, Y > != < X, A^T * Y >, A^T is not the Transpose of A.']);
